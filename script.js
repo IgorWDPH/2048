@@ -67,21 +67,17 @@ function handleGesure() {
     const deltaY = window.touchstartY - window.touchendY;
     if(Math.abs(deltaX) > Math.abs(deltaY)) {
         if(deltaX > 0) {
-            console.log('Swiped left');
             window.dispatchEvent(new KeyboardEvent('keydown',{'key':'ArrowLeft'}));
         }
         else if(deltaX < 0) {
-            console.log('Swiped right');
             window.dispatchEvent(new KeyboardEvent('keydown',{'key':'ArrowRight'}));
         }
     }
     else {
         if(deltaY > 0) {
-            console.log('Swiped up');
             window.dispatchEvent(new KeyboardEvent('keydown',{'key':'ArrowUp'}));
         }
-        if(deltaY < 0) {
-           console.log('Swiped down');
+        if(deltaY < 0) {           
            window.dispatchEvent(new KeyboardEvent('keydown',{'key':'ArrowDown'}));
         }
     }
